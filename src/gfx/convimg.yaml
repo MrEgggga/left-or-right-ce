@@ -1,0 +1,23 @@
+palettes:
+  - name: pal
+    images: automatic
+    fixed-entries:
+      - color: { index: 0, r: 255, g: 0, b: 128 }
+      - color: { index: 1, r: 0, g: 0, b: 0 }
+      - color: { index: 2, r: 255, g: 255, b: 255 }
+
+converts:
+  - name: things
+    palette: pal
+    transparent-index: 0
+    images:
+      - left.png
+      - right.png
+
+outputs:
+  - type: c
+    include-file: gfx.h
+    palettes:
+      - pal
+    converts:
+      - things
